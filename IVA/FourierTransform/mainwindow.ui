@@ -1,0 +1,1119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>714</width>
+    <height>561</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Frequency Filtering</string>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <property name="leftMargin">
+     <number>8</number>
+    </property>
+    <property name="topMargin">
+     <number>8</number>
+    </property>
+    <property name="rightMargin">
+     <number>8</number>
+    </property>
+    <property name="bottomMargin">
+     <number>8</number>
+    </property>
+    <item>
+     <widget class="QSplitter" name="splitter_2">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+      <property name="handleWidth">
+       <number>7</number>
+      </property>
+      <widget class="QSplitter" name="splitter">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="handleWidth">
+        <number>7</number>
+       </property>
+       <widget class="QScrollArea" name="scrollAreaSource">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="widgetResizable">
+         <bool>true</bool>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+        <widget class="QcvMatWidget" name="sourceImage">
+         <property name="geometry">
+          <rect>
+           <x>0</x>
+           <y>0</y>
+           <width>225</width>
+           <height>335</height>
+          </rect>
+         </property>
+        </widget>
+       </widget>
+       <widget class="QScrollArea" name="scrollAreaSpectrum">
+        <property name="widgetResizable">
+         <bool>true</bool>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+        <widget class="QcvMatWidget" name="spectrumImage">
+         <property name="geometry">
+          <rect>
+           <x>0</x>
+           <y>0</y>
+           <width>225</width>
+           <height>335</height>
+          </rect>
+         </property>
+        </widget>
+       </widget>
+      </widget>
+      <widget class="QScrollArea" name="scrollAreaInverse">
+       <property name="widgetResizable">
+        <bool>true</bool>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+       <widget class="QcvMatWidget" name="inverseImage">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>0</y>
+          <width>228</width>
+          <height>335</height>
+         </rect>
+        </property>
+       </widget>
+      </widget>
+     </widget>
+    </item>
+    <item>
+     <widget class="QTabWidget" name="tabWidgetFilters">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 10pt &quot;Lucida Grande&quot;;</string>
+      </property>
+      <property name="currentIndex">
+       <number>0</number>
+      </property>
+      <widget class="QWidget" name="tabImage">
+       <attribute name="title">
+        <string>Image</string>
+       </attribute>
+       <layout class="QHBoxLayout" name="horizontalLayout">
+        <property name="leftMargin">
+         <number>8</number>
+        </property>
+        <property name="topMargin">
+         <number>8</number>
+        </property>
+        <property name="rightMargin">
+         <number>8</number>
+        </property>
+        <property name="bottomMargin">
+         <number>8</number>
+        </property>
+        <item>
+         <widget class="QGroupBox" name="groupBoxSize">
+          <property name="title">
+           <string>Size</string>
+          </property>
+          <layout class="QHBoxLayout" name="horizontalLayout_4">
+           <property name="leftMargin">
+            <number>8</number>
+           </property>
+           <property name="topMargin">
+            <number>8</number>
+           </property>
+           <property name="rightMargin">
+            <number>8</number>
+           </property>
+           <property name="bottomMargin">
+            <number>8</number>
+           </property>
+           <item>
+            <layout class="QVBoxLayout" name="verticalLayout_6">
+             <item>
+              <widget class="QRadioButton" name="radioButtonOrigSize">
+               <property name="text">
+                <string>Original</string>
+               </property>
+               <property name="checked">
+                <bool>true</bool>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QRadioButton" name="radioButtonCustomSize">
+               <property name="text">
+                <string>Custom</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <spacer name="verticalSpacer_2">
+               <property name="orientation">
+                <enum>Qt::Vertical</enum>
+               </property>
+               <property name="sizeHint" stdset="0">
+                <size>
+                 <width>20</width>
+                 <height>40</height>
+                </size>
+               </property>
+              </spacer>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <layout class="QVBoxLayout" name="verticalLayout_5">
+             <item>
+              <layout class="QHBoxLayout" name="horizontalLayout_2">
+               <item>
+                <widget class="QLabel" name="labelWidth">
+                 <property name="text">
+                  <string>Width</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QSpinBox" name="spinBoxWidth">
+                 <property name="maximum">
+                  <number>1600</number>
+                 </property>
+                 <property name="singleStep">
+                  <number>4</number>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </item>
+             <item>
+              <layout class="QHBoxLayout" name="horizontalLayout_3">
+               <item>
+                <widget class="QLabel" name="labelHeight">
+                 <property name="text">
+                  <string>Height</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QSpinBox" name="spinBoxHeight">
+                 <property name="maximum">
+                  <number>1200</number>
+                 </property>
+                 <property name="singleStep">
+                  <number>4</number>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </item>
+            </layout>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item>
+         <widget class="QGroupBox" name="groupBoxConv">
+          <property name="title">
+           <string>Conversions</string>
+          </property>
+          <layout class="QVBoxLayout" name="verticalLayout_2">
+           <property name="leftMargin">
+            <number>8</number>
+           </property>
+           <property name="topMargin">
+            <number>8</number>
+           </property>
+           <property name="rightMargin">
+            <number>8</number>
+           </property>
+           <property name="bottomMargin">
+            <number>8</number>
+           </property>
+           <item>
+            <widget class="QCheckBox" name="checkBoxFlip">
+             <property name="text">
+              <string>Flip</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="checkBoxGray">
+             <property name="text">
+              <string>Convert to gray</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <spacer name="verticalSpacer">
+             <property name="orientation">
+              <enum>Qt::Vertical</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>20</width>
+               <height>40</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item>
+         <widget class="QGroupBox" name="groupBoxFFT">
+          <property name="title">
+           <string>FFT</string>
+          </property>
+          <layout class="QVBoxLayout" name="verticalLayout_4">
+           <property name="leftMargin">
+            <number>8</number>
+           </property>
+           <property name="topMargin">
+            <number>8</number>
+           </property>
+           <property name="rightMargin">
+            <number>8</number>
+           </property>
+           <property name="bottomMargin">
+            <number>8</number>
+           </property>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_5">
+             <item>
+              <widget class="QLabel" name="labelMag">
+               <property name="text">
+                <string>Mag.</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QSpinBox" name="spinBoxMag">
+               <property name="minimum">
+                <number>5</number>
+               </property>
+               <property name="maximum">
+                <number>20</number>
+               </property>
+               <property name="value">
+                <number>10</number>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_6">
+             <item>
+              <widget class="QLabel" name="labelFFTSizeTitle">
+               <property name="text">
+                <string>FFT Size</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <spacer name="horizontalSpacer_2">
+               <property name="orientation">
+                <enum>Qt::Horizontal</enum>
+               </property>
+               <property name="sizeHint" stdset="0">
+                <size>
+                 <width>40</width>
+                 <height>20</height>
+                </size>
+               </property>
+              </spacer>
+             </item>
+             <item>
+              <widget class="QLabel" name="labelFFTSizeValue">
+               <property name="text">
+                <string>0</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item>
+         <widget class="QGroupBox" name="groupBox">
+          <property name="title">
+           <string>Filter</string>
+          </property>
+          <layout class="QVBoxLayout" name="verticalLayout_3">
+           <property name="leftMargin">
+            <number>8</number>
+           </property>
+           <property name="topMargin">
+            <number>8</number>
+           </property>
+           <property name="rightMargin">
+            <number>8</number>
+           </property>
+           <property name="bottomMargin">
+            <number>8</number>
+           </property>
+           <item>
+            <widget class="QCheckBox" name="checkBoxFiltering">
+             <property name="text">
+              <string>Filtering</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QRadioButton" name="radioButtonFilterBox">
+             <property name="text">
+              <string>Box</string>
+             </property>
+             <property name="checked">
+              <bool>true</bool>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QRadioButton" name="radioButtonFilterGauss">
+             <property name="text">
+              <string>Gaussian</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QRadioButton" name="radioButtonFilterSinc">
+             <property name="text">
+              <string>Sinc</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item>
+         <spacer name="horizontalSpacer">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>40</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="tabLowPass">
+       <attribute name="title">
+        <string>Low Pass</string>
+       </attribute>
+       <layout class="QGridLayout" name="gridLayout_2">
+        <property name="leftMargin">
+         <number>8</number>
+        </property>
+        <property name="topMargin">
+         <number>8</number>
+        </property>
+        <property name="rightMargin">
+         <number>8</number>
+        </property>
+        <property name="bottomMargin">
+         <number>8</number>
+        </property>
+        <item row="1" column="0">
+         <widget class="QLabel" name="labelRedLP">
+          <property name="text">
+           <string>Red</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="1">
+         <widget class="QSlider" name="horizontalSliderRLP">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="0">
+         <widget class="QLabel" name="labelGreenLP">
+          <property name="text">
+           <string>Green</string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="1">
+         <widget class="QSlider" name="horizontalSliderGLP">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="0">
+         <widget class="QLabel" name="labelBlueLP">
+          <property name="text">
+           <string>Blue</string>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="1">
+         <widget class="QSlider" name="horizontalSliderBLP">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="2">
+         <widget class="QSpinBox" name="spinBoxRedLP"/>
+        </item>
+        <item row="2" column="2">
+         <widget class="QSpinBox" name="spinBoxGreenLP"/>
+        </item>
+        <item row="3" column="2">
+         <widget class="QSpinBox" name="spinBoxBlueLP"/>
+        </item>
+        <item row="0" column="2">
+         <widget class="QCheckBox" name="checkBoxLinkLP">
+          <property name="text">
+           <string>Link</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="tabHighPass">
+       <attribute name="title">
+        <string>High Pass</string>
+       </attribute>
+       <layout class="QGridLayout" name="gridLayout_3">
+        <property name="leftMargin">
+         <number>8</number>
+        </property>
+        <property name="topMargin">
+         <number>8</number>
+        </property>
+        <property name="rightMargin">
+         <number>8</number>
+        </property>
+        <property name="bottomMargin">
+         <number>8</number>
+        </property>
+        <item row="1" column="0">
+         <widget class="QLabel" name="labelRedHP">
+          <property name="text">
+           <string>Red</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="1">
+         <widget class="QSlider" name="horizontalSliderRHP">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="2">
+         <widget class="QSpinBox" name="spinBoxRedHP"/>
+        </item>
+        <item row="2" column="0">
+         <widget class="QLabel" name="labelGreenHP">
+          <property name="text">
+           <string>Green</string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="1">
+         <widget class="QSlider" name="horizontalSliderGHP">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="2">
+         <widget class="QSpinBox" name="spinBoxGreenHP"/>
+        </item>
+        <item row="3" column="0">
+         <widget class="QLabel" name="labelBlueHP">
+          <property name="text">
+           <string>Blue</string>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="1">
+         <widget class="QSlider" name="horizontalSliderBHP">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="2">
+         <widget class="QSpinBox" name="spinBoxBlueHP"/>
+        </item>
+        <item row="0" column="2">
+         <widget class="QCheckBox" name="checkBoxLinkHP">
+          <property name="text">
+           <string>Link</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>714</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuSources">
+    <property name="title">
+     <string>Sources</string>
+    </property>
+    <addaction name="actionCamera_0"/>
+    <addaction name="actionCamera_1"/>
+    <addaction name="actionFile"/>
+    <addaction name="separator"/>
+    <addaction name="actionQuit"/>
+   </widget>
+   <widget class="QMenu" name="menuVideo">
+    <property name="title">
+     <string>Video</string>
+    </property>
+    <widget class="QMenu" name="menuSize">
+     <property name="title">
+      <string>taille</string>
+     </property>
+     <addaction name="actionOriginalSize"/>
+     <addaction name="actionConstrainedSize"/>
+    </widget>
+    <addaction name="actionFlip"/>
+    <addaction name="actionGray"/>
+    <addaction name="separator"/>
+    <addaction name="menuSize"/>
+   </widget>
+   <widget class="QMenu" name="menuRender">
+    <property name="title">
+     <string>Render</string>
+    </property>
+    <addaction name="actionRenderImage"/>
+    <addaction name="actionRenderPixmap"/>
+    <addaction name="actionRenderOpenGL"/>
+   </widget>
+   <addaction name="menuSources"/>
+   <addaction name="menuVideo"/>
+   <addaction name="menuRender"/>
+  </widget>
+  <widget class="QStatusBar" name="statusBar"/>
+  <action name="actionCamera_0">
+   <property name="text">
+    <string>Camera 0</string>
+   </property>
+   <property name="toolTip">
+    <string>caméra interne</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Shift+0</string>
+   </property>
+  </action>
+  <action name="actionCamera_1">
+   <property name="text">
+    <string>Camera 1</string>
+   </property>
+   <property name="toolTip">
+    <string>caméra externe</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Shift+1</string>
+   </property>
+  </action>
+  <action name="actionFile">
+   <property name="text">
+    <string>File</string>
+   </property>
+   <property name="toolTip">
+    <string>fichier video</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+O</string>
+   </property>
+  </action>
+  <action name="actionFlip">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>flip</string>
+   </property>
+  </action>
+  <action name="actionOriginalSize">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Originale</string>
+   </property>
+   <property name="toolTip">
+    <string>taille originale</string>
+   </property>
+  </action>
+  <action name="actionConstrainedSize">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Custom</string>
+   </property>
+   <property name="iconText">
+    <string>contrainte</string>
+   </property>
+   <property name="toolTip">
+    <string>taille imposée</string>
+   </property>
+  </action>
+  <action name="actionQuit">
+   <property name="text">
+    <string>Quitter</string>
+   </property>
+  </action>
+  <action name="actionRenderImage">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Image</string>
+   </property>
+  </action>
+  <action name="actionRenderPixmap">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Pixmap</string>
+   </property>
+  </action>
+  <action name="actionRenderOpenGL">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>OpenGL</string>
+   </property>
+  </action>
+  <action name="actionGray">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>gray</string>
+   </property>
+  </action>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <customwidgets>
+  <customwidget>
+   <class>QcvMatWidget</class>
+   <extends>QWidget</extends>
+   <header>QcvMatWidget.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
+ <tabstops>
+  <tabstop>radioButtonOrigSize</tabstop>
+  <tabstop>radioButtonCustomSize</tabstop>
+  <tabstop>spinBoxWidth</tabstop>
+  <tabstop>spinBoxHeight</tabstop>
+  <tabstop>checkBoxFlip</tabstop>
+  <tabstop>checkBoxGray</tabstop>
+  <tabstop>spinBoxMag</tabstop>
+  <tabstop>checkBoxFiltering</tabstop>
+  <tabstop>radioButtonFilterBox</tabstop>
+  <tabstop>radioButtonFilterGauss</tabstop>
+  <tabstop>radioButtonFilterSinc</tabstop>
+  <tabstop>spinBoxRedLP</tabstop>
+  <tabstop>spinBoxGreenLP</tabstop>
+  <tabstop>spinBoxBlueLP</tabstop>
+  <tabstop>horizontalSliderRLP</tabstop>
+  <tabstop>horizontalSliderGLP</tabstop>
+  <tabstop>horizontalSliderBLP</tabstop>
+  <tabstop>checkBoxLinkLP</tabstop>
+  <tabstop>spinBoxRedHP</tabstop>
+  <tabstop>spinBoxGreenHP</tabstop>
+  <tabstop>spinBoxBlueHP</tabstop>
+  <tabstop>horizontalSliderRHP</tabstop>
+  <tabstop>horizontalSliderGHP</tabstop>
+  <tabstop>horizontalSliderBHP</tabstop>
+  <tabstop>checkBoxLinkHP</tabstop>
+  <tabstop>tabWidgetFilters</tabstop>
+  <tabstop>scrollAreaSource</tabstop>
+  <tabstop>scrollAreaSpectrum</tabstop>
+  <tabstop>scrollAreaInverse</tabstop>
+ </tabstops>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>radioButtonCustomSize</sender>
+   <signal>clicked(bool)</signal>
+   <receiver>actionConstrainedSize</receiver>
+   <slot>setChecked(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>678</x>
+     <y>119</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionConstrainedSize</sender>
+   <signal>triggered(bool)</signal>
+   <receiver>radioButtonCustomSize</receiver>
+   <slot>setChecked(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>678</x>
+     <y>119</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>radioButtonOrigSize</sender>
+   <signal>clicked(bool)</signal>
+   <receiver>actionOriginalSize</receiver>
+   <slot>setChecked(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>678</x>
+     <y>100</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionOriginalSize</sender>
+   <signal>triggered(bool)</signal>
+   <receiver>radioButtonOrigSize</receiver>
+   <slot>setChecked(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>678</x>
+     <y>100</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>checkBoxFlip</sender>
+   <signal>clicked(bool)</signal>
+   <receiver>actionFlip</receiver>
+   <slot>setChecked(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>698</x>
+     <y>323</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionFlip</sender>
+   <signal>triggered(bool)</signal>
+   <receiver>checkBoxFlip</receiver>
+   <slot>setChecked(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>698</x>
+     <y>323</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>horizontalSliderRLP</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>spinBoxRedLP</receiver>
+   <slot>setValue(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>560</x>
+     <y>421</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>649</x>
+     <y>416</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>horizontalSliderGLP</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>spinBoxGreenLP</receiver>
+   <slot>setValue(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>525</x>
+     <y>464</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>671</x>
+     <y>464</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>horizontalSliderBLP</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>spinBoxBlueLP</receiver>
+   <slot>setValue(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>545</x>
+     <y>503</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>646</x>
+     <y>505</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>spinBoxRedLP</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>horizontalSliderRLP</receiver>
+   <slot>setValue(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>655</x>
+     <y>431</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>467</x>
+     <y>419</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>spinBoxGreenLP</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>horizontalSliderGLP</receiver>
+   <slot>setValue(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>649</x>
+     <y>453</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>610</x>
+     <y>453</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>spinBoxBlueLP</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>horizontalSliderBLP</receiver>
+   <slot>setValue(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>646</x>
+     <y>493</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>601</x>
+     <y>493</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>horizontalSliderRHP</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>spinBoxRedHP</receiver>
+   <slot>setValue(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>594</x>
+     <y>422</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>629</x>
+     <y>425</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>horizontalSliderGHP</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>spinBoxGreenHP</receiver>
+   <slot>setValue(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>575</x>
+     <y>455</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>630</x>
+     <y>457</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>horizontalSliderBHP</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>spinBoxBlueHP</receiver>
+   <slot>setValue(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>549</x>
+     <y>496</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>632</x>
+     <y>496</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>spinBoxRedHP</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>horizontalSliderRHP</receiver>
+   <slot>setValue(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>642</x>
+     <y>414</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>589</x>
+     <y>415</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>spinBoxGreenHP</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>horizontalSliderGHP</receiver>
+   <slot>setValue(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>637</x>
+     <y>468</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>572</x>
+     <y>465</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>spinBoxBlueHP</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>horizontalSliderBHP</receiver>
+   <slot>setValue(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>645</x>
+     <y>485</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>594</x>
+     <y>486</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>checkBoxGray</sender>
+   <signal>clicked(bool)</signal>
+   <receiver>actionGray</receiver>
+   <slot>setChecked(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>328</x>
+     <y>449</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionGray</sender>
+   <signal>triggered(bool)</signal>
+   <receiver>checkBoxGray</receiver>
+   <slot>setChecked(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>328</x>
+     <y>449</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>
